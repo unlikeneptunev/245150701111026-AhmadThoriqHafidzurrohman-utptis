@@ -1,4 +1,4 @@
-# UTP Teknologi Integrasi Sistem - Ecommerce-like Backend API
+# UTP Teknologi Integrasi Sistem - *E-commerce*-like Backend API
 
 Nama: Ahmad Thoriq Hafidzurrohman<br>
 NIM: 245150701111026
