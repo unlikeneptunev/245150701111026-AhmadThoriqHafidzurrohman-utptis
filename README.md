@@ -24,6 +24,19 @@ Backend API sederhana berbasis Laravel yang mensimulasikan sistem *e-commerce*. 
 
 ---
 
+## Instalasi
+
+Setelah clone, jalankan:
+
+```
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan serve
+```
+
+---
+
 ## Dokumentasi API
 
 Dokumentasi interaktif tersedia melalui Swagger UI di:
