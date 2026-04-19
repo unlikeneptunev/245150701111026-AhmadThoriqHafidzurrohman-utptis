@@ -1,0 +1,221 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "UTP Teknologi Integrasi Sistem - TI A",
+        "description": "Ecommerce-like Backend API menggunakan Laravel dengan mock data JSON<br>Nama: Ahmad Thoriq Hafidzurrohman<br>NIM: 245150701111026",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "Local Development Server"
+        }
+    ],
+    "paths": {
+        "/api/items": {
+            "get": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Tampilkan semua item",
+                "operationId": "2cbf07eb95d033f8775c36424ac8fa06",
+                "responses": {
+                    "200": {
+                        "description": "Daftar semua item berhasil ditampilkan"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Tambah item baru",
+                "operationId": "af37857663e6805dd367a55f374c9ee1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "price"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Google Pixel 10"
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "example": 13500000
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Item berhasil ditambahkan"
+                    },
+                    "422": {
+                        "description": "Validasi gagal"
+                    }
+                }
+            }
+        },
+        "/api/items/{id}": {
+            "get": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Tampilkan item berdasarkan ID",
+                "operationId": "7f1ffbd9fa2b704c61ebcccb636ebb27",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Item berhasil ditemukan"
+                    },
+                    "404": {
+                        "description": "Item tidak ditemukan"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Update seluruh data item",
+                "operationId": "4ac9fb55d8a18bd1cba3a29d84f9fd4d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "price"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Sepatu Adidas"
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "example": 600000
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Item berhasil diupdate"
+                    },
+                    "404": {
+                        "description": "Item tidak ditemukan"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Hapus item",
+                "operationId": "0f88b60b73861d5414f8ea2fedd3dfc3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Item berhasil dihapus"
+                    },
+                    "404": {
+                        "description": "Item tidak ditemukan"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Update sebagian data item",
+                "operationId": "799f27021a1ed075867b5ea5549886c7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Sepatu Puma"
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "example": 750000
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Item berhasil diupdate sebagian"
+                    },
+                    "404": {
+                        "description": "Item tidak ditemukan"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Items",
+            "description": "Items"
+        }
+    ]
+}
